@@ -29,7 +29,7 @@ app.get('/api/hello', (req, res) => {
   res.send("안녕하세요 ~")
 })
 
-app.post('/register', (req, res) => {
+app.post('/api/users/register', (req, res) => {
   //회원가입에 필요한 정보들을 클라이언트에서 가져와 데이터베이스에 넣어준다.
   
   const user = new User(req.body)
@@ -42,7 +42,7 @@ app.post('/register', (req, res) => {
   })
 })
 
-app.post('/login', (req, res) => {
+app.post('/api/users/login', (req, res) => {
   //이메일이 데이터베이스에 있는지 확인
   User.findOne({email: req.body.email}, (err, user)=> {
     if(!user) {

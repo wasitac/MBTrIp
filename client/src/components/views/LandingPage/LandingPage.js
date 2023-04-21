@@ -15,7 +15,7 @@ function LandingPage(props) {
         if (response.data.success) {
           navigate("/login")
         } else {
-          alert('로그아웃 하는데 실패 했습니다.')
+          alert('로그아웃 실패.')
         }
       })
   }

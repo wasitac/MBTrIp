@@ -7,11 +7,26 @@ const cookieParser = require('cookie-parser');
 const config = require('./config/key');
 const {auth} = require('./middleware/auth');
 const {User} = require("./models/User");
+var cors = require('cors')
+const { Configuration, OpenAIApi } = require("openai")
+require('dotenv').config();
 
-//application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({extended: true}));
-//application/json
-app.use(bodyParser.json());
+const configuration = new Configuration({
+  apiKey: process.env.OPENAI_API_KEY,
+});
+const openai = new OpenAIApi(configuration);
+
+//CORS 이슈 해결
+// let corsOptions = {
+//   origin: 'https://www.domain.com',
+//   credentials: true
+// }
+app.use(cors());
+
+//post요청 받기
+app.use(express.json()) // for parsing application/json
+app.use(express.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
+
 app.use(cookieParser());
 
 const mongoose = require('mongoose')
@@ -95,26 +110,24 @@ app.get('/api/users/logout', auth, (req, res) => {
     })
 })
 
+// chatGPT
+app.post('/trip', async function (req, res) {
+  const completion = await openai.createChatCompletion({
+  model: "gpt-3.5-turbo",
+  messages: [
+      {role: "system", content: "당신은 여행플래너 입니다. 질문자의 mbti를 포함한 정보를 입력받아 최적의 여행계획을 세워줄 수 있습니다. 질문자가 아직 여행지를 정하지 못했다면 여행지를 먼저 추천하고, 여행지가 정해졌다면 여행일수, 이동수단, 여행취향 등의 정보를 받아 여행 경로를 추천합니다. 여행 경로 또한 mbti정보를 고려해 수립해야하며, 방문하는 여행지 간의 이동경로가 최대한 효율적인 계획을 수립합니다."},
+      {role: "user", content: "Hello world"},
+      {role: "assistant", content: "Hello world"},
+      {role: "user", content: "Hello world"}],
+  });
+  let info = completion.data.choices[0].message
+
+  console.log(info);
+  res.send(info);
+});
+
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
 
-
-
-// openAI api
-const { Configuration, OpenAIApi } = require("openai")
-require('dotenv').config();
-
-const configuration = new Configuration({
-    apiKey: process.env.OPENAI_API_KEY,
-});
-const openai = new OpenAIApi(configuration);
-
-async function runCompletion() {
-    const completion = await openai.createCompletion({
-        model: "text-davinci-003",
-        prompt: "How are you today?",
-    });
-    console.log(completion.data.choices[0].text);
-}

@@ -55,22 +55,44 @@ window.addEventListener('DOMContentLoaded', event => {
 
 
 
-async function getTripinfo(){
-    try {
-        const response = await fetch('http://localhost:3000/trip', {
-            method: 'POST',
-            headers: {
-                'Content-Type' : 'application/json'
-            },
-            body: JSON.stringify({ name: 'john'})
-        });
-
-        const data = await response.json();
-        console.log(data);
-        return data;
-    } catch (error) {
-        console.error(error);
+// MBTI 클릭 효과와 값 받아오기
+function getMbtiValue(img) {
+    const mbtiElements = document.querySelectorAll(".mbti");
+    for (const mbtiElement of mbtiElements) {
+      mbtiElement.classList.remove("active");
     }
+    const mbtiDiv = img.parentNode;
+    if (!mbtiDiv.classList.contains("active")) {
+        mbtiDiv.classList.add("active");
+    }
+    var mbtiValue = img.alt;
+    var mbtiValueElement = document.getElementById("mbti-value");
+    mbtiValueElement.innerHTML = mbtiValue;
+  }
+
+
+let myInfo = '';
+async function start(){
+    const mbti = document.getElementById('mbti-value').innerText;
+    const depart = document.getElementById('depart').value;
+    const arrive = document.getElementById('arrive').value;
+    const move = document.getElementById('move').value;
+
+    if (mbti === '당신의 MBTI는?') {
+        alert('MBTI를 선택해주세요.');
+        return;
+    }
+    if (depart === '') {
+        alert('출발하는 날짜를 알려주세요.');
+        return;
+    }
+    if (arrive === '') {
+        alert('돌아오는 날짜를 알려주세요.');
+        return;
+    }
+
+    myDate = depart+ " 에 출발해서  " + arrive + " 까지";
+    document.getElementById("chat").style.display="block";
 }
 
 
@@ -98,6 +120,9 @@ chatForm.addEventListener('submit', async function(event) {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({ 
+        mbti: mbti,
+        myDate: myDate,
+        move: move,
         userMessage: userMessage,
         assistantMessage: assistantMessage,
      })

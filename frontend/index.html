@@ -54,17 +54,17 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact"
+              <a class="nav-link py-3 px-0 px-lg-3 rounded" href="#portfolio"
                 >Home</a
               >
             </li>
             <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about"
+              <a class="nav-link py-3 px-0 px-lg-3 rounded" href="#info"
                 >info</a
               >
             </li>
             <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded" href="#portfolio"
+              <a class="nav-link py-3 px-0 px-lg-3 rounded" href=""
                 >Travel Guide</a
               >
             </li>
@@ -73,10 +73,10 @@
       </div>
     </nav>
 
-    <!-- mbti Section-->
+    <!-- input user info Section -->
     <section class="page-section portfolio" id="portfolio">
       <div class="container">
-        <!-- Portfolio Section Heading-->
+        <!-- user info Section Heading-->
         <h2
           class="page-section-heading text-center text-uppercase text-secondary mb-0"
         >
@@ -85,392 +85,196 @@
         <!-- Icon Divider-->
         <div class="divider-custom">
           <div class="divider-custom-line"></div>
-          <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+          <div class="divider-custom-icon"></div>
           <div class="divider-custom-line"></div>
         </div>
-        <!-- Portfolio Grid Items-->
         <div class="MBTIcontainer row justify-content-center">
           <!-- infj-->
-          <div class="mbti mb-5">
-            <div
-              class="portfolio-item mx-auto"
-              data-bs-toggle="modal"
-              data-bs-target="#portfolioModal1"
-            >
-              <div
-                class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100"
-              >
-                <div
-                  class="portfolio-item-caption-content text-center text-white"
-                >
-                  <i class="fas fa-plus fa-3x"></i>
-                </div>
-              </div>
+          <div class="mbti">
               <img
+                alt="infj"
                 class="img-fluid"
                 src="img/infj.png"
-                alt="..."
+                onclick="getMbtiValue(this)"
               />
-            </div>
+                <span class="mbti-caption-text">infj</span>
           </div>
           <!-- istp-->
-          <div class="mbti mb-5">
-            <div
-              class="portfolio-item mx-auto"
-              data-bs-toggle="modal"
-              data-bs-target="#portfolioModal1"
-            >
-              <div
-                class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100"
-              >
-                <div
-                  class="portfolio-item-caption-content text-center text-white"
-                >
-                  <i class="fas fa-plus fa-3x"></i>
-                </div>
-              </div>
+          <div class="mbti">
               <img
+                alt="istp"
                 class="img-fluid"
                 src="img/istp.png"
-                alt="..."
+                onclick="getMbtiValue(this)"
               />
-            </div>
+                <span class="mbti-caption-text">istp</span>
           </div>
           <!-- enfj-->
-          <div class="mbti mb-5">
-            <div
-              class="portfolio-item mx-auto"
-              data-bs-toggle="modal"
-              data-bs-target="#portfolioModal1"
-            >
-              <div
-                class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100"
-              >
-                <div
-                  class="portfolio-item-caption-content text-center text-white"
-                >
-                  <i class="fas fa-plus fa-3x"></i>
-                </div>
-              </div>
+          <div class="mbti">
               <img
+                alt="enfj"
                 class="img-fluid"
                 src="img/enfj.png"
-                alt="..."
+                onclick="getMbtiValue(this)"
               />
-            </div>
+                <span class="mbti-caption-text">enfj</span>
           </div>
           <!-- esfj-->
-          <div class="mbti mb-5">
-            <div
-              class="portfolio-item mx-auto"
-              data-bs-toggle="modal"
-              data-bs-target="#portfolioModal1"
-            >
-              <div
-                class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100"
-              >
-                <div
-                  class="portfolio-item-caption-content text-center text-white"
-                >
-                  <i class="fas fa-plus fa-3x"></i>
-                </div>
-              </div>
+          <div class="mbti">
               <img
+                alt="esfj"
                 class="img-fluid"
                 src="img/esfj.png"
-                alt="..."
+                onclick="getMbtiValue(this)"
               />
-            </div>
+                <span class="mbti-caption-text">esfj</span>
           </div>
           <!-- entj-->
-          <div class="mbti mb-5">
-            <div
-              class="portfolio-item mx-auto"
-              data-bs-toggle="modal"
-              data-bs-target="#portfolioModal1"
-            >
-              <div
-                class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100"
-              >
-                <div
-                  class="portfolio-item-caption-content text-center text-white"
-                >
-                  <i class="fas fa-plus fa-3x"></i>
-                </div>
-              </div>
+          <div class="mbti">
               <img
+                alt="entj"
                 class="img-fluid"
                 src="img/entj-commander.png"
-                alt="..."
+                onclick="getMbtiValue(this)"
               />
-            </div>
+                <span class="mbti-caption-text">entj</span>
           </div>
           <!-- istj-->
-          <div class="mbti mb-5">
-            <div
-              class="portfolio-item mx-auto"
-              data-bs-toggle="modal"
-              data-bs-target="#portfolioModal1"
-            >
-              <div
-                class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100"
-              >
-                <div
-                  class="portfolio-item-caption-content text-center text-white"
-                >
-                  <i class="fas fa-plus fa-3x"></i>
-                </div>
-              </div>
+          <div class="mbti">
               <img
+                alt="istj"
                 class="img-fluid"
                 src="img/istj.png"
-                alt="..."
+                onclick="getMbtiValue(this)"
               />
-            </div>
+                <span class="mbti-caption-text">istj</span>
           </div>
           <!-- enfp-->
-          <div class="mbti mb-5">
-            <div
-              class="portfolio-item mx-auto"
-              data-bs-toggle="modal"
-              data-bs-target="#portfolioModal1"
-            >
-              <div
-                class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100"
-              >
-                <div
-                  class="portfolio-item-caption-content text-center text-white"
-                >
-                  <i class="fas fa-plus fa-3x"></i>
-                </div>
-              </div>
+          <div class="mbti">
               <img
+                alt="enfp"
                 class="img-fluid"
                 src="img/enfp.png"
-                alt="..."
+                onclick="getMbtiValue(this)"
               />
-            </div>
+                <span class="mbti-caption-text">enfp</span>
           </div>
           <!-- intj-->
-          <div class="mbti mb-5">
-            <div
-              class="portfolio-item mx-auto"
-              data-bs-toggle="modal"
-              data-bs-target="#portfolioModal1"
-            >
-              <div
-                class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100"
-              >
-                <div
-                  class="portfolio-item-caption-content text-center text-white"
-                >
-                  <i class="fas fa-plus fa-3x"></i>
-                </div>
-              </div>
+          <div class="mbti">
               <img
+                alt="intj"
                 class="img-fluid"
                 src="img/intj.png"
-                alt="..."
+                onclick="getMbtiValue(this)"
               />
-            </div>
+                <span class="mbti-caption-text">intj</span>
           </div>
           <!-- estp-->
-          <div class="mbti mb-5">
-            <div
-              class="portfolio-item mx-auto"
-              data-bs-toggle="modal"
-              data-bs-target="#portfolioModal1"
-            >
-              <div
-                class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100"
-              >
-                <div
-                  class="portfolio-item-caption-content text-center text-white"
-                >
-                  <i class="fas fa-plus fa-3x"></i>
-                </div>
-              </div>
+          <div class="mbti">
               <img
+                alt="estp"
                 class="img-fluid"
                 src="img/estp.png"
-                alt="..."
+                onclick="getMbtiValue(this)"
               />
-            </div>
+                <span class="mbti-caption-text">estp</span>
           </div>
           <!--estj -->
-          <div class="mbti mb-5">
-            <div
-              class="portfolio-item mx-auto"
-              data-bs-toggle="modal"
-              data-bs-target="#portfolioModal1"
-            >
-              <div
-                class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100"
-              >
-                <div
-                  class="portfolio-item-caption-content text-center text-white"
-                >
-                  <i class="fas fa-plus fa-3x"></i>
-                </div>
-              </div>
+          <div class="mbti">
               <img
+                alt="estj"
                 class="img-fluid"
                 src="img/estj.png"
-                
-                alt="..."
+                onclick="getMbtiValue(this)"
               />
-            </div>
+                <span class="mbti-caption-text">estj</span>
           </div>
           <!-- isfp-->
-          <div class="mbti mb-5">
-            <div
-              class="portfolio-item mx-auto"
-              data-bs-toggle="modal"
-              data-bs-target="#portfolioModal1"
-            >
-              <div
-                class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100"
-              >
-                <div
-                  class="portfolio-item-caption-content text-center text-white"
-                >
-                  <i class="fas fa-plus fa-3x"></i>
-                </div>
-              </div>
+          <div class="mbti">
               <img
+                alt="isfp"
                 class="img-fluid"
                 src="img/isfp.png"
-                alt="..."
+                onclick="getMbtiValue(this)"
               />
-            </div>
+                <span class="mbti-caption-text">isfp</span>
           </div>
           <!-- intp-->
-          <div class="mbti mb-5">
-            <div
-              class="portfolio-item mx-auto"
-              data-bs-toggle="modal"
-              data-bs-target="#portfolioModal2"
-            >
-              <div
-                class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100"
-              >
-                <div
-                  class="portfolio-item-caption-content text-center text-white"
-                >
-                  <i class="fas fa-plus fa-3x"></i>
-                </div>
-              </div>
+          <div class="mbti">
               <img
+                alt="intp"
                 class="img-fluid"
                 src="img/intp.png"
-                alt="..."
+                onclick="getMbtiValue(this)"
               />
-            </div>
+                <span class="mbti-caption-text">intp</span>
           </div>
           <!-- isfj-->
-          <div class="mbti mb-5">
-            <div
-              class="portfolio-item mx-auto"
-              data-bs-toggle="modal"
-              data-bs-target="#portfolioModal3"
-            >
-              <div
-                class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100"
-              >
-                <div
-                  class="portfolio-item-caption-content text-center text-white"
-                >
-                  <i class="fas fa-plus fa-3x"></i>
-                </div>
-              </div>
+          <div class="mbti">
               <img
+                alt="isfj"
                 class="img-fluid"
                 src="img/isfj.png"
-                alt="..."
+                onclick="getMbtiValue(this)"
               />
-            </div>
+                <span class="mbti-caption-text">isfj</span>
           </div>
           <!-- entp-->
-          <div class="mbti mb-5 mb-lg-0">
-            <div
-              class="portfolio-item mx-auto"
-              data-bs-toggle="modal"
-              data-bs-target="#portfolioModal4"
-            >
-              <div
-                class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100"
-              >
-                <div
-                  class="portfolio-item-caption-content text-center text-white"
-                >
-                  <i class="fas fa-plus fa-3x"></i>
-                </div>
-              </div>
+          <div class="mbti">
               <img
+                alt="entp"
                 class="img-fluid"
                 src="img/entp.png"
-                alt="..."
+                onclick="getMbtiValue(this)"
               />
-            </div>
+                <span class="mbti-caption-text">entp</span>
           </div>
           <!-- infp-->
-          <div class="mbti mb-5 mb-md-0">
-            <div
-              class="portfolio-item mx-auto"
-              data-bs-toggle="modal"
-              data-bs-target="#portfolioModal5"
-            >
-              <div
-                class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100"
-              >
-                <div
-                  class="portfolio-item-caption-content text-center text-white"
-                >
-                  <i class="fas fa-plus fa-3x"></i>
-                </div>
-              </div>
+          <div class="mbti">
               <img
+                alt="infp"
                 class="img-fluid"
                 src="img/infp.png"
-                alt="..."
+                onclick="getMbtiValue(this)"
               />
-            </div>
+                <span class="mbti-caption-text">infp</span>
           </div>
           <!-- esfp-->
           <div class="mbti">
-            <div
-              class="portfolio-item mx-auto"
-              data-bs-toggle="modal"
-              data-bs-target="#portfolioModal6"
-            >
-              <div
-                class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100"
-              >
-                <div
-                  class="portfolio-item-caption-content text-center text-white"
-                >
-                  <i class="fas fa-plus fa-3x"></i>
-                </div>
-              </div>
               <img
+                alt="esfp"
                 class="img-fluid"
                 src="img/esfp.png"
-                alt="..."
+                onclick="getMbtiValue(this)"
               />
-            </div>
+                <span class="mbti-caption-text">esfp</span>
           </div>
-          
-          </div>
-          
         </div>
       </div>
-    </section>
-
-    <button onclick="getTripinfo()"> 요청하기 </button>
-
-    <!-- input user info Section -->
+      <h4 id="mbti-value" class="page-section-heading text-center text-uppercase text-secondary mb-0"
+      >당신의 mbti는?</h4>
+ 
+    <div class="intro-container" id="info">
+      <label for="day">언제 여행을 떠날 예정이신가요?</label>
+        <div class="day">
+          <input id="depart" type="date">
+          부터
+          <input id="arrive" type="date">
+          까지
+        </div>
+      <select id="move" name="이동수단">
+        <option value="모름">모름</option>
+        <option value="걸어서">도보</option>
+        <option value="차로">차</option>
+        <option value="대중교통으로">대중교통</option>
+        <option value="자전거로">자전거</option>
+      </select>
+      <button onclick="start()"> 시작하기 </button>
+    </div>
+  </section>
     <!-- chating Section -->
-    <section>
+    
+    <div id="chat" class="chat-container" style="display: none;">
       <ul class="chat-thread">
         <li>안녕하세요</li>
       </ul>
@@ -478,7 +282,7 @@
       <form class="chat-window">
         <input class="chat-window-message" name="chat-window-message" type="text" placeholder="Type your message here..." autocomplete="off" autofocus />
       </form>
-    </section>
+    </div>
 
 <div class="bg"></div>
 

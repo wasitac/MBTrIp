@@ -23,12 +23,14 @@ app.use(express.urlencoded({ extended: true })) // for parsing application/x-www
 
 // POST method route
 app.post('/trip', async function (req, res) {
-  let{ userMessage, assistantMessage} = req.body
+  let{ mbti, myDate, move, userMessage, assistantMessage} = req.body
 
     let messages = [
       {role: "system", content: "당신은 여행기획자입니다. 이용자에게 여행지를 추천해주고, 여행지가 정해진 이용자에게는 여행 계획의 세워주는것이 당신의 일입니다. 당신의 여행계획은 이동경로가 효율적이고 관광지의 테마가 겹치지 않아야 합니다."},
       {role: "user", content: "당신은 여행기획자입니다. 이용자에게 여행지를 추천해주고, 여행지가 정해진 이용자에게는 여행 계획의 세워주는것이 당신의 일입니다. 당신의 여행계획은 이동경로가 효율적이고 관광지의 테마가 겹치지 않아야 합니다."},
       {role: "assistant", content: "안녕하세요! 여행기획자입니다. 이용자분께서 원하시는 여행 스타일에 따라 추천해드릴게요. 우선 일정과 이동수단 그리고 선호하는 여행 테마에 대해서 알려주세요. 또한, 함께 여행 하실 인원수도 알려주시면 더욱 정확한 추천이 가능합니다. 예를 들어, 2인이서 5일간의 여행을 계획하고 있으며, 자연과 역사적인 건축물을 볼 수 있는 여행이 더욱 좋을 것 같다고 생각하시면, 이에 맞는 여행지와 일정을 추천해드릴 수 있습니다. 그러면 이제부터 자세히 질문해보도록 할게요."},
+      {role: "user", content: `제 mbti는 ${mbti}.입니다. ${myDate}여행을 다녀올 계획이고, ${move}이동할 계획입니다.`},
+      {role: "assistant", content: "."},
     ]
 
     while (userMessage.length != 0 || assistantMessage.length != 0){

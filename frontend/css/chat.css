@@ -169,3 +169,52 @@
 		 margin-right: 0;
 	}
 }
+
+.intro-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.mbti {
+	margin: 10px;
+	position: relative;
+  }
+  
+  .mbti img {
+	position: relative;
+	z-index: 1;
+	transition: transform 0.3s ease-in-out; /* scale 효과를 위한 트랜지션 설정 */
+  }
+  
+  .mbti:hover img {
+	opacity: 0.7;
+	transform: scale(1.05); /* 마우스 호버 시 크기를 약간 더 키우는 scale 효과 추가 */
+  }
+  
+  .mbti::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 0;
+	background-color: white;
+	opacity: 0;
+	transition: opacity 0.3s ease-in-out;
+  }
+  
+  .mbti:hover::after {
+	opacity: 0.3;
+  }
+  
+  .mbti.active img {
+	opacity: 0.7;
+	transform: scale(1.05); /* 이미지가 클릭되어 활성화된 경우에도 크기를 약간 더 키우는 scale 효과 유지 */
+  }
+  
+  .mbti.active::after {
+	opacity: 0.3;
+  }
